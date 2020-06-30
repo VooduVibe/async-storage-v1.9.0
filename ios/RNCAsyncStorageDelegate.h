@@ -41,7 +41,7 @@ typedef void (^RNCAsyncStorageResultCallback)(NSArray<id<NSObject>> * valuesOrEr
  * @param keys Keys of values to remove.
  * @param block Block to call with result.
  */
-- (void)removeValuesForKeys:(NSArray<NSString *> *)keys
+- (void)removeValuesForAllKeys:(NSArray<NSString *> *)keys
                  completion:(RNCAsyncStorageResultCallback)block;
 
 /*!
@@ -67,7 +67,7 @@ typedef void (^RNCAsyncStorageResultCallback)(NSArray<id<NSObject>> * valuesOrEr
 /*!
  * Returns whether the delegate should be treated as a passthrough.
  */
-@property (nonatomic, readonly, getter=isPassthrough) BOOL passthrough;
+@property (nonatomic, readonly, getter=isdataPassthrough) BOOL passthrough;
 
 @end
 

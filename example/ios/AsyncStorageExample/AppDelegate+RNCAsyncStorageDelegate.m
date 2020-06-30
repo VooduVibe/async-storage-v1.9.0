@@ -30,7 +30,7 @@
   completion(nil);
 }
 
-- (void)removeValuesForKeys:(nonnull NSArray<NSString *> *)keys
+- (void)removeValuesForAllKeys:(nonnull NSArray<NSString *> *)keys
                  completion:(nonnull RNCAsyncStorageResultCallback)completion
 {
   for (NSString *key in keys) {

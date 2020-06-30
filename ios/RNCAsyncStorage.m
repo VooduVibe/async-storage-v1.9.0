@@ -509,7 +509,7 @@ RCT_EXPORT_MODULE()
 
 - (BOOL)_passthroughDelegate
 {
-    return [self.delegate respondsToSelector:@selector(isPassthrough)] && self.delegate.isPassthrough;
+    return [self.delegate respondsToSelector:@selector(isdataPassthrough)] && self.delegate.isdataPassthrough;
 }
 
 #pragma mark - Exported JS Functions
@@ -647,7 +647,7 @@ RCT_EXPORT_METHOD(multiRemove:(NSArray<NSString *> *)keys
                      callback:(RCTResponseSenderBlock)callback)
 {
   if (self.delegate != nil) {
-    [self.delegate removeValuesForKeys:keys completion:^(NSArray<id<NSObject>> *results) {
+    [self.delegate removeValuesForAllKeys:keys completion:^(NSArray<id<NSObject>> *results) {
       NSArray<NSDictionary *> *errors = RCTMakeErrors(results);
       callback(@[RCTNullIfNil(errors)]);
     }];
